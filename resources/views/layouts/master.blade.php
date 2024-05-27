@@ -1,6 +1,3 @@
-@include('layouts.header')
-@section('content')
+header start here 
+@yield('content')
 
-
-
-@endsection
