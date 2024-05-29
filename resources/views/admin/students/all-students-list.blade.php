@@ -29,19 +29,25 @@
    <thead>
       <tr>
          <th>Sr.No</th>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>Father Name</th>
+         <th>Name</th>
          <th>Email</th>
          <th>Date Of Birth</th>
-         <th>Address</th>
+         <th>Gender</th>
+         <th>Father Name</th>
+         <th>Father Mobile Number</th>
          <th>Aadhaar No</th>
-         <th>Phone No</th>
-         <th>Course</th>
-         <th>Joining Date</th>
-         <th>End Date</th>
-         <th>Total Fees</th>
+         <th>Student Mobile Number</th> 
+         <th>Marital Status</th>
+         <th>Category</th>
+         <th>Address</th>
+         <th>District</th>
+         <th>State</th>
+         <th>Qualification</th>
+         <th>Course Type</th>
          <th>Course Duration</th>
+         <th>Course Joining Date</th>
+         <th>Course Complession Date</th>
+         <th>Total Fees</th>
          <th>Image</th>
          <th>Status</th>
          <th>Action</th>
@@ -52,24 +58,32 @@
       @foreach($get_students_detail as $student)
       <tr>
          <td>{{ $count++ }}</td>
-         <td>{{ $student->first_name }}</td>
-         <td>{{ $student->last_name }}</td>
-         <td>{{ $student->father_name }}</td>
+         <td>{{ $student->name }}</td>
          <td>{{ $student->email }}</td>
          <td>{{ $student->dob }}</td>
-         <td>{{ $student->address }}</td>
+         <td>{{ $student->gender }}</td>
+         <td>{{ $student->father_name }}</td>
+         <td>{{ $student->father_phone_no }}</td>
          <td>{{ $student->aadhaar_no }}</td>
-         <td>{{ $student->phone_no }}</td>
+         <td>{{ $student->student_phone_no }}</td>
+         <td>{{ $student->marital_status }}</td>
+         <td>{{ $student->category }}</td>
+         <td>{{ $student->address }}</td>
+         <td>{{ $student->district }}</td>
+         <td>{{ $student->state }}</td>
+         <td>{{ $student->qualification }}</td>
          <td>{{ $student->course_type }}</td>
-         <td>{{ $student->joining_date }}</td>
-         <td>{{ $student->end_date }}</td>
-         <td>{{ $student->total_fees }}</td>
          <td>{{ $student->course_duration }}</td>
+         <td>{{ $student->course_joining_date }}</td>
+         <td>{{ $student->course_complession_date }}</td>
+         <td>{{ $student->total_fees }}</td>         
          <td>
-            @if(!empty($student->user_pic) && file_exists(public_path('uploads/users/'.$student->user_pic)))
-            <img src = "{{ url('public/uploads/users/'. $student->user_pic)}}" width="60px" height="40px" alt="">
+            @if(!empty($student->user_pic) && file_exists(public_path('uploads/users/' . $student->user_pic)))
+                <img src="{{ url('public/uploads/users/' . $student->user_pic) }}" width="60px" height="40px" alt="">
+            @else
+                <img src="{{ url('public/uploads/users/default_user.png') }}" width="60px" height="40px" alt="Default Image">
             @endif
-         </td>
+        </td>
          <td>{{ $student->user_status }}</td>
          <td>
             <a class="btn btn-info btn-sm" href="{{ url('admin/edit-student',$student->id) }}">
