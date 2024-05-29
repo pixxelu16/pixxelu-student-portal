@@ -14,6 +14,7 @@ class StudentController extends Controller
     $get_students_detail = User::OrderBy('ID', 'DESC')->get();   
         return view('admin.students.all-students-list', compact('get_students_detail'));
     }
+    
     //Function for add student
     public function add_student(){
         return view('admin.students.add-new-student');
@@ -29,23 +30,32 @@ class StudentController extends Controller
             $filename = time() . '.' . $extension;
             $file->move(public_path('uploads/users'), $filename);
         }
+        //qualifications convert to string
+       $qualification = implode(', ', $request->input('qualification'));
         //Create student
         $create_student = User::create([
             'name' => $request->first_name." ".$request->last_name,
             'first_name' =>$request->first_name,
             'last_name' =>$request->last_name,
-            'father_name' =>$request->father_name,
             'dob' =>$request->dob,
-            'address' =>$request->address,
+            'gender' =>$request->gender,
+            'father_name' =>$request->father_name,
+            'father_phone_no' =>$request->father_phone_no,
             'aadhaar_no' =>$request->aadhaar_no,
-            'phone_no' =>$request->phone_no,
             'email' =>$request->email,
             'password' => Hash::make($request['password']),
+            'student_phone_no' =>$request->student_phone_no,
+            'marital_status' =>$request->marital_status,
+            'category' =>$request->category,
+            'address' =>$request->address,
+            'district' =>$request->district,
+            'state' =>$request->state,
+            'qualification' => $qualification,
             'course_type' =>$request->course_type,
-            'joining_date' =>$request->joining_date,
-            'end_date' =>$request->end_date,
-            'total_fees' =>$request->total_fees,
             'course_duration' =>$request->course_duration,
+            'course_joining_date' =>$request->course_joining_date,
+            'course_complession_date' =>$request->course_complession_date,
+            'total_fees' =>$request->total_fees,
             'user_status' =>$request->user_status,
             'user_type' =>'Admin',
             'user_pic' =>$filename,
@@ -83,22 +93,30 @@ class StudentController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $file->move(public_path('uploads/users'), $filename);
+            //qualifications convert to string
+            $qualification = implode(', ', $request->input('qualification'));
             //Update student record with image
             $update_student = User::where('id', $id)->update([
                 'name' => $request->first_name." ".$request->last_name,
                 'first_name' =>$request->first_name,
                 'last_name' =>$request->last_name,
-                'father_name' =>$request->father_name,
                 'dob' =>$request->dob,
-                'address' =>$request->address,
+                'gender' =>$request->gender,
+                'father_name' =>$request->father_name,
+                'father_phone_no' =>$request->father_phone_no,
                 'aadhaar_no' =>$request->aadhaar_no,
-                'phone_no' =>$request->phone_no,
-                'password' => Hash::make($request['password']),
+                'student_phone_no' =>$request->student_phone_no,
+                'marital_status' =>$request->marital_status,
+                'category' =>$request->category,
+                'address' =>$request->address,
+                'district' =>$request->district,
+                'state' =>$request->state,
+                'qualification' => $qualification,
                 'course_type' =>$request->course_type,
-                'joining_date' =>$request->joining_date,
-                'end_date' =>$request->end_date,
-                'total_fees' =>$request->total_fees,
                 'course_duration' =>$request->course_duration,
+                'course_joining_date' =>$request->course_joining_date,
+                'course_complession_date' =>$request->course_complession_date,
+                'total_fees' =>$request->total_fees,
                 'user_status' =>$request->user_status,
                 'user_type' =>'Admin',
                 'user_pic' =>$filename,
@@ -110,22 +128,29 @@ class StudentController extends Controller
                 return back()->with('unsuccess', 'Opps something went wrong.');
             }
         } else {
+            $qualification = implode(', ', $request->input('qualification'));
             //Update student record without image
             $update_student = User::where('id', $id)->update([
                 'name' => $request->first_name." ".$request->last_name,
                 'first_name' =>$request->first_name,
                 'last_name' =>$request->last_name,
-                'father_name' =>$request->father_name,
                 'dob' =>$request->dob,
-                'address' =>$request->address,
+                'gender' =>$request->gender,
+                'father_name' =>$request->father_name,
+                'father_phone_no' =>$request->father_phone_no,
                 'aadhaar_no' =>$request->aadhaar_no,
-                'phone_no' =>$request->phone_no,
-                'password' => Hash::make($request['password']),
+                'student_phone_no' =>$request->student_phone_no,
+                'marital_status' =>$request->marital_status,
+                'category' =>$request->category,
+                'address' =>$request->address,
+                'district' =>$request->district,
+                'state' =>$request->state,
+                'qualification' => $qualification,
                 'course_type' =>$request->course_type,
-                'joining_date' =>$request->joining_date,
-                'end_date' =>$request->end_date,
-                'total_fees' =>$request->total_fees,
                 'course_duration' =>$request->course_duration,
+                'course_joining_date' =>$request->course_joining_date,
+                'course_complession_date' =>$request->course_complession_date,
+                'total_fees' =>$request->total_fees,
                 'user_status' =>$request->user_status,
                 'user_type' =>'Admin',
             ]);
@@ -151,7 +176,8 @@ class StudentController extends Controller
             //student record delete with image
             $students->delete();
             return back()->with('success', 'Student record deleted successfully.');
-        } else {
+        } else { 
+
             //student record delete without image
             $students->delete();
             return back()->with('success', 'Student record deleted successfully.');
