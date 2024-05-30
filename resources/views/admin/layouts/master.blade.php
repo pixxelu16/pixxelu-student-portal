@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
-
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
-    <title>Admin Dashboard Panel</title>
-</head>
-
+@include('admin.layouts.header')
 <body>
-include('sidebaar.sidebaar')
+
 <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -38,7 +15,7 @@ include('sidebaar.sidebaar')
 
                 <div class="notifications-bar">
                     <div class="notifications-img">
-                        <img src="images/notification.svg" alt="notification" />
+                        <img src="{{ asset('public/admin/images/notification.svg') }}" alt="notification" />
                         <span class="dynmic-gtt">1</span>
                     </div>
                     <div class="dyanmic-content">
@@ -47,7 +24,7 @@ include('sidebaar.sidebaar')
                 </div>
 
                 <div class="img-admin-panel">
-                    <img src="images/profile.jpg" alt="">
+                    <img src="{{ asset('public/admin/images/profile.jpg') }}" alt="">
                 </div>
                 <div class="dropdown-content-panel">
                     <div class="dropdown">
@@ -73,7 +50,8 @@ include('sidebaar.sidebaar')
 
 
         </div>
-@yield('content')
+        @include('admin.sidebaar.sidebar')
+      @yield('content')
 <div class="footer-code">
             <div class="copyright-code">
                 <span>© 2014-2024 Pixxelu. All rights reserved</span>
@@ -81,8 +59,11 @@ include('sidebaar.sidebaar')
 			</div>
 
     </section>
+    <script>
+        var base_url = '{{ url("/") }}'; 
+        </script>
 
-    <script src="js/script.js"></script>
+    <script src="{{ asset('public/admin/js/script.js') }}"></script>
 
 
     <script>

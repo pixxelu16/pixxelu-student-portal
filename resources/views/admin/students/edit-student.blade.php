@@ -13,6 +13,16 @@
    background-color: #e9ecef; 
    color: #6c757d; 
    }
+   input.reset {
+      padding: 8px;
+      font-size: 14px;
+      color: white;
+      background: red;
+      border: none;
+      border-radius: 5px;
+      width: 74px;
+      height: 40px;
+   }
 </style>
 <section class="content">
 @if (Session::has('success')) 
@@ -262,6 +272,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
    </div>
    <button type="submit" name="submit" class="btn btn-primary">Update</button>
+   <input type="reset" class="reset" name="reset" value="Cancel">
 </form>
 <script>
    document.addEventListener('DOMContentLoaded', function() {
