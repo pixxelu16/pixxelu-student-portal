@@ -177,7 +177,6 @@ class StudentController extends Controller
             $students->delete();
             return back()->with('success', 'Student record deleted successfully.');
         } else { 
-
             //student record delete without image
             $students->delete();
             return back()->with('success', 'Student record deleted successfully.');

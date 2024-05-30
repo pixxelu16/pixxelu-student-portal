@@ -3,10 +3,20 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
    .notifaction-green {
-   color: green;
+      color: green;
    }
    .notification-red {
-   color: red;
+      color: red;
+   }
+   input.reset {
+      padding: 8px;
+      font-size: 14px;
+      color: white;
+      background: red;
+      border: none;
+      border-radius: 5px;
+      width: 74px;
+      height: 40px;
    }
 </style>
 <section class="content">
@@ -256,6 +266,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
    </div>
    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+   <input type="reset" class="reset" name="reset" value="Cancel">
 </form>
 <script>
    document.addEventListener('DOMContentLoaded', function() {
@@ -266,8 +277,7 @@
          const numericValue = inputValue.replace(/\D/g, ''); 
          const truncatedValue = numericValue.slice(0, 10);
          event.target.value = truncatedValue;
-      });
-   
+      });   
       //Student Mobile Number
       const studentPhoneNoInput = document.getElementById('student_phone_no');
       studentPhoneNoInput.addEventListener('input', function(event) {
@@ -275,8 +285,7 @@
          const numericValue = inputValue.replace(/\D/g, ''); 
          const truncatedValue = numericValue.slice(0, 10); 
          event.target.value = truncatedValue;
-      });
-   
+      });  
       //Aadhar Number
       const aadharNoInput = document.getElementById('aadhar_no');
       aadharNoInput.addEventListener('input', function(event) {
@@ -284,8 +293,7 @@
          const numericValue = inputValue.replace(/\D/g, '');
          const truncatedValue = numericValue.slice(0, 12);
          event.target.value = truncatedValue;
-      });
-   
+      });  
       //Total Fees
       const totalFeesInput = document.getElementById('total_fees');
       totalFeesInput.addEventListener('input', function(event) {
