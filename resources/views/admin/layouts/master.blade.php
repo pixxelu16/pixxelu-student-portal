@@ -63,7 +63,7 @@
         var base_url = '{{ url("/") }}'; 
         </script>
 
-    <script src="{{ asset('public/admin/js/script.js') }}"></script>
+    <script src="{{URL::asset('public/admin/js/script.js') }}"></script>
 
 
     <script>
