@@ -9,17 +9,14 @@
       <link rel="stylesheet" href="{{ url('public/admin/css/style.css') }}">
       <link rel="stylesheet" href="{{ url('public/admin/css/dark-mode.css') }}">
       <link rel="stylesheet" href="{{ url('public/admin/css/mobile.css') }}">
-
       <!----===== Iconscout CSS ===== -->
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
          crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
-
-
+      <!-- jQuery CDN -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
       <title>Admin Dashboard Panel</title>
    </head>
    <body>
@@ -37,10 +34,14 @@
       </script> 
       <script src="{{ url('public/admin/js/script.js') }}"></script>
       <script src="{{ url('public/admin/js/custom-script.js') }}"></script>
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-
-
+      <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
+      <!-- DataTables JS CDN -->
+      <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+      <script>
+         $(document).ready(function() {
+               $('#example1').DataTable();
+         });
+      </script>
       <script>
          // Get all the <li> elements
          const navLinks = document.querySelectorAll('.nav-links li');

@@ -1,40 +1,35 @@
 @extends('layouts.master')
 @section('content') 
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-<div class="space-remove">
-</div>
+<div class="space-remove"></div>
 <div class="title-subheading">
    <h2>All Students</h2>
 </div>
 <div class="main-table">
    <div class="data-table-listing">
-    <!--
-      <div class="dropdown-column">
-         <div class="dropdown-date">
-            <input type="date" value="2023-10-21" />
+      <!--
+         <div class="dropdown-column">
+            <div class="dropdown-date">
+               <input type="date" value="2023-10-21" />
+            </div>
+            <div class="dropdown-Filter">
+               <input type="Filter" value="Filter">
+            </div>
          </div>
-         <div class="dropdown-Filter">
-            <input type="Filter" value="Filter">
-         </div>
-      </div>
-      <div class="dropdown-Search">
-         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search">
-            <button type="submit" class="search-icon">
-            <img src="{{ url('public/admin/images/search.svg') }}" alt="search">
-            </button>
-         </div>
-      </div>-->
+         <div class="dropdown-Search">
+            <div class="search-container">
+               <input type="text" class="search-input" placeholder="Search">
+               <button type="submit" class="search-icon">
+               <img src="{{ url('public/admin/images/search.svg') }}" alt="search">
+               </button>
+            </div>
+         </div>-->
       <div class="btn-pixxelu">
          <a href="{{ url('admin/add-new-student') }}"><i class="fa-solid fa-plus"></i>Add New Student</a>
       </div>
    </div>
    <div class="scrolling-data-table">
-    <table id="student_form" class="rwd-table">
-    <thead>
+      <table id="example1" class="rwd-table">
+         <thead>
             <tr>
                <th></th>
                <th>S. No</th>
@@ -52,12 +47,12 @@
                <th>Status</th>
                <th>Action</th>
             </tr>
-            </thead>
-            <tbody>
+         </thead>
+         <tbody>
             @php $count = 1; @endphp
-               @foreach($get_students_detail as $student)
+            @foreach($get_students_detail as $student)
             <tr>
-            <!--<div id="myModal" class="modal">
+               <!--<div id="myModal" class="modal">
                   <div class="modal-content">
                      <span class="close">&times;</span>
                      <div class="student-card">
@@ -77,44 +72,42 @@
                         </div>
                      </div>
                   </div>
-               </div> -->
-   
+                  </div> -->
                <td data-th="">
                   <input type="checkbox">
                </td>
                <td>{{ $count++ }}</td>
                <td data-th="Student ID" id="openModalBtn">
-               {{ $student->id }}
+                  {{ $student->id }}
                </td>
                <td data-th="Image">
-               @if(!empty($student->user_pic) && file_exists(public_path('uploads/users/'.$student->user_pic)))
-               <img src = "{{ url('public/uploads/users/'. $student->user_pic)}}" width="60px" height="40px" alt="">
-               @endif
-            
+                  @if(!empty($student->user_pic) && file_exists(public_path('uploads/users/'.$student->user_pic)))
+                  <img src = "{{ url('public/uploads/users/'. $student->user_pic)}}" width="60px" height="40px" alt="">
+                  @endif
                </td>
                <td data-th="Name">
-                {{ $student->name }}
+                  {{ $student->name }}
                </td>
                <td data-th="Phone No">
-               {{ $student->student_phone_no }}
+                  {{ $student->student_phone_no }}
                </td>
                <td data-th="Email">
-               {{ $student->email }}
+                  {{ $student->email }}
                </td>
                <td data-th="Aadhar No">
-               {{ $student->aadhaar_no }}
+                  {{ $student->aadhaar_no }}
                </td>
                <td data-th="course">
-               {{ $student->course_type }}
+                  {{ $student->course_type }}
                </td>
                <td data-th="Course Joining Date">
-               {{ $student->course_joining_date }}
+                  {{ $student->course_joining_date }}
                </td>
                <td data-th="total fess">
-               {{ $student->total_fees }}
+                  {{ $student->total_fees }}
                </td>
                <td data-th="Course Duration">
-               {{ $student->course_duration }}
+                  {{ $student->course_duration }}
                </td>
                <td data-th="Last Paid Fees">
                   5000<br>10 May 2024
@@ -125,7 +118,7 @@
                <td data-th="Aadhar No">
                   <img src="{{ url('public/admin/images/ellips.svg') }}" alt="ellips" />
                </td>
-               <td class="action">
+               <!-- <td class="action">
                   <div class="drop-action">
                      <div class="dropdown keep-open">
                         <button id="dLabel" role="button" href="#" data-toggle="dropdown"
@@ -144,28 +137,18 @@
                         </ul>
                      </div>
                   </div>
-               </td>
+                  </td> -->
             </tr>
             @endforeach
          </tbody>
       </table>
       <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                     <span class="close">&times;</span>
-                     <p>This is a modal popup!</p>
-                  </div>
-               </div>
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>This is a modal popup!</p>
+         </div>
+      </div>
    </div>
 </div>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function() {
-        console.log('Document ready, initializing DataTable');
-        $('#student_form').DataTable();
-    });
-</script>
 @endsection
