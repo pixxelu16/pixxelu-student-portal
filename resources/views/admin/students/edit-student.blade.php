@@ -15,13 +15,15 @@
       <p>{{ Session::get('unsuccess') }}</p>
    </div>
    @endif 
-   <h2>Add New Student</h2>
+   <h2>Edit Student</h2>
    <div class="login-form">
-      <form action="{{ route('admin.submit.student') }}" Method="POST" enctype="multipart/form-data">
+      <form action="{{ route('admin.update.student', $students->id) }}" Method="POST" enctype="multipart/form-data">
          @csrf 
          <div class="small-12 medium-2 large-2 columns">
             <div class="circle">
-               <img class="profile-pic" src="{{ url('public/admin/images/i2.svg') }}" alt="ai">
+               @if($students->user_pic) 
+                  <img class="profile-pic" src = "{{ url('public/uploads/users/'. $students->user_pic)}}" width="60px" height="40px" alt="ai">
+                  @endif
             </div>
             <div class="p-image">
                <img src="{{ url('public/admin/images/i1.svg') }}" class="upload-button">
@@ -31,17 +33,17 @@
          <div class="form-group">
             <div class="form-design first-name">
                <label for="first-name">First Name</label>
-               <input type="text" id="first-name" name="first_name" placeholder="Enter First Name">
+               <input type="text" id="first-name" name="first_name" value="{{ $students->first_name }}" placeholder="Enter First Name">
             </div>
             <div class="form-design last-name">
                <label for="last-name">Last Name</label>
-               <input type="text" id="last-name" name="last_name" placeholder="Enter Last Name">
+               <input type="text" id="last-name" name="last_name" value="{{ $students->first_name }}" placeholder="Enter Last Name">
             </div>
          </div>
          <div class="form-group">
             <div class="form-design dob">
                <label for="dob">Date of Birth</label>
-               <input type="date" id="dob" name="dob">
+               <input type="date" id="dob" name="dob" value="{{ $students->first_name }}">
             </div>
             <div class="form-design gender-options">
                <label>Gender</label>
@@ -58,31 +60,27 @@
          <div class="form-group">
             <div class="form-design father-name">
                <label for="father_name">Father Name</label>
-               <input type="text" id="father_name" name="father_name" placeholder="Enter Father Name">
+               <input type="text" id="father_name" name="father_name" value="{{ $students->first_name }}" placeholder="Enter Father Name">
             </div>
             <div class="form-design phone-no">
                <label for="father_phone_no">Father Phone Number</label>
-               <input type="text" id="father_phone_no" name="father_phone_no" placeholder="Enter Father Phone Number">
+               <input type="text" id="father_phone_no" name="father_phone_no" value="{{ $students->first_name }}" placeholder="Enter Father Phone Number">
             </div>
          </div>
          <div class="form-group">
             <div class="form-design aadhaar-no">
                <label for="aadhar_no">Aadhar Number</label>
-               <input type="text" id="aadhar_no" name="aadhaar_no" placeholder="Enter Aaadhar Number">
+               <input type="text" id="aadhar_no" name="aadhaar_no" value="{{ $students->first_name }}" placeholder="Enter Aaadhar Number">
             </div>
             <div class="form-design mail">
                <label for="email">Email</label>
-               <input type="email" id="email" name="email" placeholder="Enter email address">
+               <input type="email" id="email" name="email" value="{{ $students->first_name }}" placeholder="Enter email address">
             </div>
          </div>
          <div class="form-group">
-            <div class="form-design password">
-               <label for="password">Passwordr</label>
-               <input type="password" id="password" name="password" placeholder="Enter Password">
-            </div>
             <div class="form-design student-phone-no">
                <label for="student_phone_no">Student Phone Number</label>
-               <input type="text" id="student_phone_no" name="student_phone_no" placeholder="Enter Student Phone Number">
+               <input type="text" id="student_phone_no" name="student_phone_no" value="{{ $students->first_name }}" placeholder="Enter Student Phone Number">
             </div>
          </div>
          <div class="form-group">
@@ -124,7 +122,7 @@
          <div class="form-group">
             <div class="form-design address">
                <label for="address">Address</label>
-               <input type="text" id="address" name="address" placeholder="Enter Address">
+               <input type="text" id="address" name="address" value="{{ $students->first_name }}" placeholder="Enter Address">
             </div>
             <div class="form-design district">
                <label for="district">District</label>
@@ -235,15 +233,15 @@
          <div class="form-group">
             <div class="form-design join-date">
                <label for="course_joining_date">Course Joining Date</label>
-               <input type="date" id="course_joining_date" name="course_joining_date">
+               <input type="date" id="course_joining_date" name="course_joining_date" value="{{ $students->first_name }}">
             </div>
             <div class="form-design end-date">
                <label for="course_complession_date">Course Complession Date</label>
-               <input type="date" id="course_complession_date" name="course_complession_date">
+               <input type="date" id="course_complession_date" name="course_complession_date" value="{{ $students->first_name }}">
             </div>
             <div class="form-design status">
                <label for="total-fees">Total Fees</label>
-               <input type="number" id="total-fees" name="total-fees" placeholder="Enter amount">
+               <input type="number" id="total-fees" name="total-fees" value="{{ $students->first_name }}" placeholder="Enter amount">
             </div>
             <div class="form-design fees">
                <label for="user_status">Status</label>
@@ -262,11 +260,11 @@
             <div class="form-group">
                <div class="amount">
                   <label for="fees-amount">Fees Amount</label>
-                  <input type="number" id="fees-amount" name="fees-amount" placeholder="Enter amount">
+                  <input type="number" id="fees-amount" name="fees-amount" value="500" placeholder="Enter amount">
                </div>
                <div class="payment-date">
                   <label for="payment-date">Fees payment date</label>
-                  <input type="date" id="payment-date" name="payment-date">
+                  <input type="date" id="payment-date" name="payment-date" value="30-05-2024">
                </div>
             </div>
          </div>

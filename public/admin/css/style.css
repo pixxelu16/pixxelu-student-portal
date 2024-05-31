@@ -1157,3 +1157,16 @@ form.login-container p img {
     padding: 10px;
     
 }
+
+/* show success message */
+.notification-green {
+    color: green;
+    font-size: x-large;
+}
+.notification-red {
+    color: red;
+}
+.field-icon {
+   cursor: pointer;
+}
+/* end success message */

@@ -2,6 +2,16 @@
 @section('content') 
 <div class="space-remove"></div>
 <div class="title-subheading">
+@if (Session::has('success')) 
+   <div class="notification-green">
+      <p>{{ Session::get('success') }}</p>
+   </div>
+   @endif 
+   @if (Session::has('unsuccess')) 
+   <div class="notification-red">
+      <p>{{ Session::get('unsuccess') }}</p>
+   </div>
+   @endif 
    <h2>All Students</h2>
 </div>
 <div class="main-table">
@@ -77,11 +87,11 @@
                   <input type="checkbox">
                </td>
                <td>{{ $count++ }}</td>
-               <td data-th="Student ID" id="openModalBtn">
+               <td data-th="Student ID">
                   {{ $student->id }}
                </td>
                <td data-th="Image">
-                  @if(!empty($student->user_pic) && file_exists(public_path('uploads/users/'.$student->user_pic)))
+                  @if($student->user_pic)
                   <img src = "{{ url('public/uploads/users/'. $student->user_pic)}}" width="60px" height="40px" alt="">
                   @endif
                </td>
@@ -117,6 +127,12 @@
                </td>
                <td data-th="Aadhar No">
                   <img src="{{ url('public/admin/images/ellips.svg') }}" alt="ellips" />
+                  <a class="btn btn-info btn-sm" href="{{ url('admin/edit-student',$student->id) }}">
+                  <i class="fas fa-pencil-alt"></i> Edit
+                  </a>
+                  <a class="btn btn-danger btn-sm" href="{{ url('admin/delete-student',$student->id) }}">
+                  <i class="fas fa-trash"></i> Delete
+                  </a>
                </td>
                <!-- <td class="action">
                   <div class="drop-action">

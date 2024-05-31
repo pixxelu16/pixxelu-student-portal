@@ -1,4 +1,3 @@
-
 <div class="top">
    <i class="uil uil-bars sidebar-toggle"></i>
    <!-- <div class="search-box">
@@ -99,6 +98,5 @@
             </div>
          </li>
       </ul>
-   </div>
-   
+   </div>  
 </nav>

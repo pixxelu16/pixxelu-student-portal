@@ -21,6 +21,11 @@ class StudentController extends Controller
 
     //Function for submit student
     public function submit_student(Request $request){
+        //Check if the email already exists
+        $is_email_exists = User::where('email', $request->email)->exists();
+        if($is_email_exists) {
+            return back()->with('unsuccess', 'Email is already taken, Please try with a new email.');
+        }
         //Check if user image is exit or not
         $filename = 'default_user.png';
         if($request->hasFile('image')) {
