@@ -563,8 +563,8 @@ table.rwd-table tr {
     background: #fff;
     border-radius: 10px;
     padding: 10px 14px;
-    height: 77vh;
-    overflow: hidden;
+    height: 700px;
+    overflow: scroll;
 }
 
 table.rwd-table th {
@@ -598,11 +598,11 @@ tr.data-table {
 /* Student Css End*/
 
 
-.scrolling-data-table {
+/* .scrolling-data-table {
     overflow: scroll;
     height: 680px;
     min-height: 680px;
-}
+} */
 
 td.green-color span {
     background: #C8E6C9;
@@ -1030,11 +1030,11 @@ form.login-container p img {
 }
 
 .p-image {
-    left: 108px;
+    left: 75px;
     color: #018294;
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-    position: absolute;
-    top: 271px;
+    position: relative;
+    top: -32px;
 }
 .p-image:hover {
   transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
@@ -1125,7 +1125,7 @@ form.login-container p img {
     width: 30%;
 }
 .small-12.medium-2.large-2.columns {
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .p-image img {
     width: 25px;
@@ -1137,3 +1137,23 @@ form.login-container p img {
 
 
 /* staff */
+
+
+
+
+
+
+
+.drop-action ul.dropdown-menu {
+    display: none;
+}
+
+.drop-action ul.dropdown-menu.show {
+    display: block;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    
+}
