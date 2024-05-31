@@ -39,7 +39,7 @@
    </div>
    <div class="menu-items">
       <ul class="nav-links">
-         <li><a href="index.html">
+         <li><a href="{{ url('admin-dashboard') }}">
             <img src="{{ url('public/admin/images/dashboard.svg') }}" alt="dashboard" />
             <span class="link-name">Dashboard</span>
             </a>
@@ -76,11 +76,19 @@
             <span class="link-name">Settings</span>
             </a>
          </li>
-         <li><a href="login.html">
+
+         <li class="nav-item">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
             <i class="uil uil-signout"></i>
-            <span class="link-name">Logout</span>
+            {{ __('Logout') }}
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+               @csrf
+            </form>
          </li>
+
          <li class="mode">
             <a href="#">
             <i class="uil uil-moon"></i>
@@ -92,15 +100,5 @@
          </li>
       </ul>
    </div>
-   <li class="nav-item">
-      <a class="dropdown-item" href="{{ route('logout') }}"
-         onclick="event.preventDefault();
-         document.getElementById('logout-form').submit();">
-      <i class="nav-icon fas fa-sign-out-alt"></i>
-      {{ __('Logout') }}
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-      </form>
-   </li>
+   
 </nav>

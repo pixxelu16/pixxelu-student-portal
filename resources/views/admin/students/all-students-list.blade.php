@@ -1,8 +1,11 @@
 @extends('layouts.master')
 @section('content') 
+ 
+
 <div class="space-remove">
-</div>
- <div class="title-subheading">
+        </div>
+
+<div class="title-subheading">
             <h2>All Students</h2>
         </div>
 
@@ -21,12 +24,12 @@
                     <div class="search-container">
                         <input type="text" class="search-input" placeholder="Search">
                         <button type="submit" class="search-icon">
-                            <img src="images/search.svg" alt="search">
+                            <img src="{{ url('public/admin/images/search.svg') }}" alt="search">
                         </button>
                     </div>
                 </div>
                 <div class="btn-pixxelu">
-                    <a href="#"><i class="fa-solid fa-plus"></i>Add New Student</a>
+                    <a href="{{ url('admin/add-new-student') }}"><i class="fa-solid fa-plus"></i>Add New Student</a>
                 </div>
             </div>
             <div class="scrolling-data-table">
@@ -672,62 +675,35 @@
                             <td data-th="Pending" class="red-color">
                                 <span>Pending</span>
                             </td>
-                            <td data-th="Aadhar No">
-                                <img src="images/ellips.svg" alt="ellips" />
+
+
+                            <td class="action">
+                                <div class="drop-action">
+                                    <div class="dropdown keep-open">
+                                        <button id="dLabel" role="button" href="#" data-toggle="dropdown"
+                                            data-target="#" class="btn btn-primary">
+                                            <img src="images/ellips.svg" alt="ellips" /> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <li><a href="#"><span class="icon-set clone"><i
+                                                            class="fa-regular fa-clone"></i></span>Clone</a></li>
+                                            <li><a href="#"><span class="icon-set clone"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>Edit</a>
+                                            </li>
+                                            <li><a href="#"><span class="icon-set clone"><i
+                                                            class="fa-solid fa-box-archive"></i></span>Archive</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </td>
+
                         </tr>
 
                     </tbody>
                 </table>
             </div>
-</div>
-<script>
-        // Get all the <li> elements
-        const navLinks = document.querySelectorAll('.nav-links li');
-
-        // Add click event listener to each <li>
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                // Remove 'active' class from all <li>
-                navLinks.forEach(nav => nav.classList.remove('active'));
-
-                // Add 'active' class to the clicked <li>
-                this.classList.add('active');
-            });
-        });
-    </script>
-
-
-    <script>
-        // script.js
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // Get the modal
-            var modal = document.getElementById('myModal');
-
-            // Get the button that opens the modal
-            var btn = document.getElementById('openModalBtn');
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName('close')[0];
-
-            // When the user clicks the button, open the modal 
-            btn.onclick = function () {
-                modal.style.display = 'block';
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = 'none';
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
-        });
-    </script>
+        </div>
 
        
-        @endsection
+@endsection

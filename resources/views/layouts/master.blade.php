@@ -8,11 +8,18 @@
       <!----======== CSS ======== -->
       <link rel="stylesheet" href="{{ url('public/admin/css/style.css') }}">
       <link rel="stylesheet" href="{{ url('public/admin/css/dark-mode.css') }}">
+      <link rel="stylesheet" href="{{ url('public/admin/css/mobile.css') }}">
+
       <!----===== Iconscout CSS ===== -->
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
       <title>Admin Dashboard Panel</title>
    </head>
    <body>
@@ -29,6 +36,11 @@
          var base_url = '{{ url("/") }}'; 
       </script> 
       <script src="{{ url('public/admin/js/script.js') }}"></script>
+      <script src="{{ url('public/admin/js/custom-script.js') }}"></script>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+
+
       <script>
          // Get all the <li> elements
          const navLinks = document.querySelectorAll('.nav-links li');
