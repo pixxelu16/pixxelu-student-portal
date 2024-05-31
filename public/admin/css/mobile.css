@@ -1,0 +1,70 @@
+@media (min-width: 1500px) and (max-width: 1700px) {
+    .main-table {
+        height: 600px;
+    }
+    .title-subheading h2 {
+        font-size: 20px;
+    }
+    .dropdown-column input {
+        height: 38px;
+    }
+    .title-subheading {
+        margin-bottom: 10px;
+    }
+    table.rwd-table th {
+        font-size: 12px;
+    }
+    td {
+        font-size: 11px;
+    }
+    .main-table h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-size: 12px;
+    }
+    .form-group input {
+        height: 37px;
+        font-size: 11px;
+    }
+    .form-group select {
+        height: 37px;
+        font-size: 11px;
+    }
+    .back-button a {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+    .save-button a {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+    .footer-code {
+        font-size: 12px;
+    }
+    .menu-items li a .link-name {
+        font-size: 12px;
+    }
+    .menu-items li a {
+        height: 45px;
+    }
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+ @media (min-width: 1280px) and (max-width: 1500px) {
+    .main-table {
+        height: 600px;
+    }
+}
