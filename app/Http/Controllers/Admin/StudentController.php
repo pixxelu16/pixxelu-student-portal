@@ -8,15 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class StudentController extends Controller
-{
-    //Function for Get all students
+{ 
     public function all_students(){
-        return view('admin.students.all-students-list');
+    $get_students_detail = User::OrderBy('ID', 'DESC')->get();   
+        return view('admin.students.all-students-list', compact('get_students_detail'));
     }
-    // public function all_students(){
-    // $get_students_detail = User::OrderBy('ID', 'DESC')->get();   
-    //     return view('admin.students.all-students-list', compact('get_students_detail'));
-    // }
     
     //Function for add student
     public function add_student(){
