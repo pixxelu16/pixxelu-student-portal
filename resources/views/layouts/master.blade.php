@@ -20,10 +20,8 @@
       <title>Admin Dashboard Panel</title>
    </head>
    <body>
-      @include('layouts.sidebar')
       <section class="dashboard">
-      @include('layouts.top-bar')
-
+         @include('layouts.sidebar')
          @yield('content')
          <div class="footer-code">
             <div class="copyright-code">
