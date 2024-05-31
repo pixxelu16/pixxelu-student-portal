@@ -26,19 +26,19 @@ class HomeController extends Controller
     $user = Auth::user();
         //Check if user type Super_Admin or not
         if($user->user_type == 'Super_Admin'){
-            return redirect('super-admin-dashboard');
+            return redirect('superadmin/dashboard');
         //Check if user type Admin or not
         } elseif ($user->user_type == 'Admin'){
-            return redirect('admin-dashboard');
+            return redirect('admin/dashboard');
         //Check if user type Student or not
         } elseif ($user->user_type == 'Student'){
-            return redirect('student-dashboard');
+            return redirect('student/dashboard');
         //Check if user type Employee or not
         } elseif ($user->user_type == 'Employee'){
-            return redirect('employee-dashboard');
+            return redirect('employee/dashboard');
         //Check if user type Subscriber or not
         } elseif ($user->user_type == 'Subscriber'){
-            return redirect('subscriber-dashboard');
+            return redirect('subscriber/dashboard');
         } else {
             return view('home');
         }

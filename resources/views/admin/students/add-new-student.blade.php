@@ -56,9 +56,9 @@
          </div>
          <div class="form-group">
             <div class="form-design aadhaar-no">
-               <label for="aadhaar_no">Aadhaar Number</label>
-               <input type="text" id="aadhaar_no" name="aadhaar_no" placeholder="Enter Aadhaar Number">
-            </div>
+               <label for="aadhar_no">Aadhar Number</label>
+               <input type="text" id="aadhar_no" name="aadhaar_no" placeholder="Enter Aaadhar Number">
+            </div> 
             <div class="form-design mail">
                <label for="email">Email</label>
                <input type="email" id="email" name="email" placeholder="Enter email address">
@@ -270,4 +270,39 @@
       </div>
    </div>
 </div>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+      //Father Mobile Number
+      const fatherPhoneNoInput = document.getElementById('father_phone_no');
+      fatherPhoneNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, ''); 
+         const truncatedValue = numericValue.slice(0, 10);
+         event.target.value = truncatedValue;
+      });   
+      //Student Mobile Number
+      const studentPhoneNoInput = document.getElementById('student_phone_no');
+      studentPhoneNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, ''); 
+         const truncatedValue = numericValue.slice(0, 10); 
+         event.target.value = truncatedValue;
+      });  
+      //Aadhar Number
+      const aadharNoInput = document.getElementById('aadhar_no');
+      aadharNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, '');
+         const truncatedValue = numericValue.slice(0, 12);
+         event.target.value = truncatedValue;
+      });  
+      //Total Fees
+      const totalFeesInput = document.getElementById('total_fees');
+      totalFeesInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, '');
+         event.target.value = numericValue;
+      });
+   });
+</script>
 @endsection

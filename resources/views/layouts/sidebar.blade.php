@@ -39,7 +39,7 @@
    </div>
    <div class="menu-items">
       <ul class="nav-links">
-         <li><a href="{{ url('admin-dashboard') }}">
+         <li><a href="{{ url('admin/dashboard') }}">
             <img src="{{ url('public/admin/images/dashboard.svg') }}" alt="dashboard" />
             <span class="link-name">Dashboard</span>
             </a>
