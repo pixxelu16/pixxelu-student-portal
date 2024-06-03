@@ -10,7 +10,7 @@ use App\Models\User;
 class StudentController extends Controller
 { 
     public function all_students(){
-    $get_students_detail = User::OrderBy('ID', 'DESC')->get();   
+    $get_students_detail = User::where('user_type', 'Student')->orderBy('id', 'DESC')->get();
         return view('admin.students.all-students-list', compact('get_students_detail'));
     }
     
@@ -54,14 +54,16 @@ class StudentController extends Controller
             'address' =>$request->address,
             'district' =>$request->district,
             'state' =>$request->state,
+            'pin_code' =>$request->pin_code,
             'qualification' => $qualification,
             'course_type' =>$request->course_type,
             'course_duration' =>$request->course_duration,
             'course_joining_date' =>$request->course_joining_date,
+            'batch_timing' =>$request->batch_timing,
             'course_complession_date' =>$request->course_complession_date,
             'total_fees' =>$request->total_fees,
             'user_status' =>$request->user_status,
-            'user_type' =>'Admin',
+            'user_type' =>'Student',
             'user_pic' =>$filename,
         ]);
 
@@ -84,15 +86,15 @@ class StudentController extends Controller
         //Check if user image is exit or not
         $filename = 'default_user.png';
         if($request->hasFile('image')) {
-            //Get student 
-            $students = User::find($id);
-            //Get imagepath 
-            $imagepath = public_path('uploads/users/' .$students->user_pic);
-            //Check if student image exists or not folder
-            if(file_exists($imagepath) && is_file($imagepath)){
-                //Remove image folder
-                unlink($imagepath);
-            }
+            // //Get student 
+            // $students = User::find($id);
+            // //Get imagepath 
+            // $imagepath = public_path('uploads/users/' .$students->user_pic);
+            // //Check if student image exists or not folder
+            // if(file_exists($imagepath) && is_file($imagepath)){
+            //     //Remove image folder
+            //     unlink($imagepath);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
@@ -115,14 +117,16 @@ class StudentController extends Controller
                 'address' =>$request->address,
                 'district' =>$request->district,
                 'state' =>$request->state,
+                'pin_code' =>$request->pin_code,
                 'qualification' => $qualification,
                 'course_type' =>$request->course_type,
                 'course_duration' =>$request->course_duration,
                 'course_joining_date' =>$request->course_joining_date,
+                'batch_timing' =>$request->batch_timing,
                 'course_complession_date' =>$request->course_complession_date,
                 'total_fees' =>$request->total_fees,
                 'user_status' =>$request->user_status,
-                'user_type' =>'Admin',
+                'user_type' =>'Student',
                 'user_pic' =>$filename,
             ]);
             //Check if student record created or not
@@ -149,14 +153,16 @@ class StudentController extends Controller
                 'address' =>$request->address,
                 'district' =>$request->district,
                 'state' =>$request->state,
+                'pin_code' =>$request->pin_code,
                 'qualification' => $qualification,
                 'course_type' =>$request->course_type,
                 'course_duration' =>$request->course_duration,
                 'course_joining_date' =>$request->course_joining_date,
+                'batch_timing' =>$request->batch_timing,
                 'course_complession_date' =>$request->course_complession_date,
                 'total_fees' =>$request->total_fees,
                 'user_status' =>$request->user_status,
-                'user_type' =>'Admin',
+                'user_type' =>'Student',
             ]);
             //Check if student record created or not
             if($update_student){
