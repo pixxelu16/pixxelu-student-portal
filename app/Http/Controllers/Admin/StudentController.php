@@ -9,10 +9,11 @@ use App\Models\User;
 
 class StudentController extends Controller
 { 
+    //Function for Get all students list
     public function all_students(){
     $get_students_detail = User::where('user_type', 'Student')->orderBy('id', 'DESC')->get();
         return view('admin.students.all-students-list', compact('get_students_detail'));
-    }
+    }  
     
     //Function for add student
     public function add_student(){
@@ -35,7 +36,7 @@ class StudentController extends Controller
             $file->move(public_path('uploads/users'), $filename);
         }
         //qualifications convert to string
-       $qualification = implode(', ', $request->input('qualification'));
+        $qualification = implode(',', $request->input('qualification'));
         //Create student
         $create_student = User::create([
             'name' => $request->first_name." ".$request->last_name,
@@ -66,7 +67,6 @@ class StudentController extends Controller
             'user_type' =>'Student',
             'user_pic' =>$filename,
         ]);
-
         //Check if student record created or not
         if($create_student){
             return back()->with('success', 'Student record created successfully.');
@@ -77,8 +77,8 @@ class StudentController extends Controller
 
     //Function for edit student
     public function edit_student($id){
-    $students = User::find($id);
-        return view('admin.students.edit-student', compact('students'));
+    $student = User::find($id);
+        return view('admin.students.edit-student', compact('student'));
     }
 
     //Function for update student
@@ -86,21 +86,12 @@ class StudentController extends Controller
         //Check if user image is exit or not
         $filename = 'default_user.png';
         if($request->hasFile('image')) {
-            // //Get student 
-            // $students = User::find($id);
-            // //Get imagepath 
-            // $imagepath = public_path('uploads/users/' .$students->user_pic);
-            // //Check if student image exists or not folder
-            // if(file_exists($imagepath) && is_file($imagepath)){
-            //     //Remove image folder
-            //     unlink($imagepath);
-            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $file->move(public_path('uploads/users'), $filename);
             //qualifications convert to string
-            $qualification = implode(', ', $request->input('qualification'));
+            $qualification = implode(',', $request->input('qualification'));
             //Update student record with image
             $update_student = User::where('id', $id)->update([
                 'name' => $request->first_name." ".$request->last_name,
@@ -136,7 +127,7 @@ class StudentController extends Controller
                 return back()->with('unsuccess', 'Opps something went wrong.');
             }
         } else {
-            $qualification = implode(', ', $request->input('qualification'));
+            $qualification = implode(',', $request->input('qualification'));
             //Update student record without image
             $update_student = User::where('id', $id)->update([
                 'name' => $request->first_name." ".$request->last_name,
@@ -175,21 +166,12 @@ class StudentController extends Controller
     
     //Function for delete student
     public function delete_student($id){
-        //Get student 
-        $students = User::find($id);
-        //Get imagepath
-        $imagepath = public_path('uploads/users/' .$students->user_pic);
-        //Check if student image is exists or not folder
-        if(file_exists($imagepath) && is_file($imagepath)){
-            //Remove image folder
-            unlink($imagepath);
-            //student record delete with image
-            $students->delete();
+    $delete_student = User::find($id)->delete();
+        //Check if student deleted or not
+        if($delete_student){
             return back()->with('success', 'Student record deleted successfully.');
-        } else { 
-            //student record delete without image
-            $students->delete();
-            return back()->with('success', 'Student record deleted successfully.');
+        } else {
+            return back()->with('unsuccess', 'Opps something went wrong.');
         }
     }
 }

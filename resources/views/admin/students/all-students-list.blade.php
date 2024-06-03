@@ -16,23 +16,6 @@
 </div>
 <div class="main-table">
    <div class="data-table-listing">
-      <!--
-         <div class="dropdown-column">
-            <div class="dropdown-date">
-               <input type="date" value="2023-10-21" />
-            </div>
-            <div class="dropdown-Filter">
-               <input type="Filter" value="Filter">
-            </div>
-         </div>
-         <div class="dropdown-Search">
-            <div class="search-container">
-               <input type="text" class="search-input" placeholder="Search">
-               <button type="submit" class="search-icon">
-               <img src="{{ url('public/admin/images/search.svg') }}" alt="search">
-               </button>
-            </div>
-         </div>-->
       <div class="btn-pixxelu">
          <a href="{{ url('admin/add-new-student') }}"><i class="fa-solid fa-plus"></i>Add New Student</a>
       </div>
@@ -63,57 +46,28 @@
          <tbody>
             @php $count = 1; @endphp
             @foreach($get_students_detail as $student)
-            <tr>
-              
-               <td data-th="">
-                  <input type="checkbox">
-               </td>
+            <tr>              
+               <td data-th=""><input type="checkbox"></td>
                <td>{{ $count++ }}</td>
-               <td data-th="Student ID">
-                  {{ $student->id }}
-               </td>
-               <td data-th="Image">
+               <td>{{ $student->id }}</td>
+               <td>
                   @if($student->user_pic)
                   <img src = "{{ url('public/uploads/users/'. $student->user_pic)}}" width="60px" height="40px" alt="">
                   @endif
                </td>
-               <td data-th="Name">
-                  {{ $student->name }}
-               </td>
-               <td data-th="Phone No">
-                  {{ $student->student_phone_no }}
-               </td>
-               <td data-th="Email">
-                  {{ $student->email }}
-               </td>
-               <td data-th="Aadhar No">
-                  {{ $student->aadhaar_no }}
-               </td>
-               <td data-th="course">
-                  {{ $student->course_type }}
-               </td>
-               <td data-th="Course Joining Date">
-                  {{ $student->course_joining_date }}
-               </td>
-               <td data-th="batch timing">
-                  {{ $student->batch_timing }}
-               </td>
-               <td data-th="Course end Date">
-                  {{ $student->course_complession_date }}
-               </td>
-               <td data-th="total fess">
-                  {{ $student->total_fees }}
-               </td>
-               <td data-th="Course Duration">
-                  {{ $student->course_duration }}
-               </td>
-               <td data-th="Last Paid Fees">
-                  5000<br>10 May 2024
-               </td>
-               <td data-th="Status" class="green-color">
-                  <span>Already Paid</span>
-               </td>
-               <td data-th="Aadhar No">
+               <td>{{ $student->name }}</td>
+               <td>{{ $student->student_phone_no }}</td>
+               <td>{{ $student->email }}</td>
+               <td>{{ $student->aadhaar_no }}</td>
+               <td>{{ $student->course_type }}</td>
+               <td>{{ $student->course_joining_date }}</td>
+               <td>{{ $student->batch_timing }}</td>
+               <td>{{ $student->course_complession_date }}</td>
+               <td>{{ $student->total_fees }}</td>
+               <td>{{ $student->course_duration }}</td>
+               <td>5000<br>10 May 2024</td>
+               <td class="green-color"><span>Already Paid</span></td>
+               <td>
                   <img src="{{ url('public/admin/images/ellips.svg') }}" alt="ellips" />
                   <a class="btn btn-info btn-sm" href="{{ url('admin/edit-student',$student->id) }}">
                   <i class="fas fa-pencil-alt"></i> Edit
@@ -144,7 +98,6 @@
                   </td> -->
             </tr>
             @endforeach
-
          </tbody>
       </table>
                <div id="myModal" class="modal">
