@@ -1,35 +1,4 @@
 
-<div class="top">
-   <i class="uil uil-bars sidebar-toggle"></i>
-   <!-- <div class="search-box">
-      <i class="uil uil-search"></i>
-      <input type="text" placeholder="Search here...">
-      </div> -->
-   <div class="dropdown-admin-panel">
-      <div class="notifications-bar">
-         <div class="notifications-img">
-            <img src="{{ url('public/admin/images/notification.svg') }}" alt="notification" />
-            <span class="dynmic-gtt">1</span>
-         </div>
-         <div class="dyanmic-content">
-            <h4>Notifications</h4>
-         </div>
-      </div>
-      <div class="img-admin-panel">
-         <img src="{{ url('public/admin/images/profile.jpg') }}" alt="">
-      </div>
-      <div class="dropdown-content-panel">
-         <div class="dropdown">
-            <button class="dropbtn">Pixxelu<br>Admin</button>
-            <div class="dropdown-content">
-               <a href="#">Profile</a>
-               <a href="#">Settings</a>
-               <a href="#">Logout</a>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
 <nav>
    <div class="logo-name">
       <div class="logo-image">
@@ -72,12 +41,12 @@
       </ul>
       <ul class="logout-mode">
          <li><a href="#">
-            <i class="uil uil-signout"></i>
+         <img src="{{ url('public/admin/images/help.svg') }}" alt="leads" />
             <span class="link-name">Help</span>
             </a>
          </li>
          <li><a href="#">
-            <i class="uil uil-signout"></i>
+         <img src="{{ url('public/admin/images/setting.svg') }}" alt="leads" />
             <span class="link-name">Settings</span>
             </a>
          </li>
@@ -86,7 +55,7 @@
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                document.getElementById('logout-form').submit();">
-            <i class="uil uil-signout"></i>
+            <img src="{{ url('public/admin/images/logout.svg') }}" alt="leads" />
             {{ __('Logout') }}
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -21,8 +21,6 @@
                <a href="#">Settings</a>
                <a href="#">Logout</a>
             </div>
-
-
          </div>
       </div>
    </div>
