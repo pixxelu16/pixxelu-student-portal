@@ -31,9 +31,9 @@ Route::group(['middleware' => 'auth'], function(){
         //Students 
         Route::get('admin/all-students-list', [App\Http\Controllers\Admin\StudentController::class, 'all_students']);
         Route::get('admin/add-new-student', [App\Http\Controllers\Admin\StudentController::class, 'add_student']);
-        Route::post('admin/submit-student', [App\Http\Controllers\Admin\StudentController::class, 'submit_student'])->name('admin.submit.student.admin');
+        Route::post('admin/submit-student', [App\Http\Controllers\Admin\StudentController::class, 'submit_student'])->name('admin.submit.student');
         Route::get('admin/edit-student/{id}', [App\Http\Controllers\Admin\StudentController::class, 'edit_student']);
-        Route::post('admin/update-student/{id}', [App\Http\Controllers\Admin\StudentController::class, 'update_student'])->name('admin.update.student.admin');
+        Route::post('admin/update-student/{id}', [App\Http\Controllers\Admin\StudentController::class, 'update_student'])->name('admin.update.student');
         Route::get('admin/delete-student/{id}', [App\Http\Controllers\Admin\StudentController::class, 'delete_student']);
     });
 

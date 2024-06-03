@@ -32,8 +32,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // {{ Popup Add in student information End }} //
 
-
-
-
+   document.addEventListener('DOMContentLoaded', function() {
+      //Father Mobile Number
+      const fatherPhoneNoInput = document.getElementById('father_phone_no');
+      fatherPhoneNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, ''); 
+         const truncatedValue = numericValue.slice(0, 10);
+         event.target.value = truncatedValue;
+      });   
+      //Student Mobile Number
+      const studentPhoneNoInput = document.getElementById('student_phone_no');
+      studentPhoneNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, ''); 
+         const truncatedValue = numericValue.slice(0, 10); 
+         event.target.value = truncatedValue;
+      });  
+      //Aadhar Number
+      const aadharNoInput = document.getElementById('aadhar_no');
+      aadharNoInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, '');
+         const truncatedValue = numericValue.slice(0, 12);
+         event.target.value = truncatedValue;
+      });  
+      //Total Fees
+      const totalFeesInput = document.getElementById('total_fees');
+      totalFeesInput.addEventListener('input', function(event) {
+         const inputValue = event.target.value;
+         const numericValue = inputValue.replace(/\D/g, '');
+         event.target.value = numericValue;
+      });
+   });
 
 

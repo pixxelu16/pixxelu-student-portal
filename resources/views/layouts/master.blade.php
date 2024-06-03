@@ -23,7 +23,6 @@
       @include('layouts.sidebar')
       <section class="dashboard">
       @include('layouts.top-bar')
-
          @yield('content')
          <div class="footer-code">
             <div class="copyright-code">
