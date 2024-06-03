@@ -57,6 +57,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
          const truncatedValue = numericValue.slice(0, 12);
          event.target.value = truncatedValue;
       });  
+        //Pin Code
+        const pinCodeInput = document.getElementById('pin_code');
+        pinCodeInput.addEventListener('input', function(event) {
+            const inputValue = event.target.value;
+            const numericValue = inputValue.replace(/\D/g, ''); 
+            const truncatedValue = numericValue.slice(0, 6); 
+            event.target.value = truncatedValue;
+        });
+        
       //Total Fees
       const totalFeesInput = document.getElementById('total_fees');
       totalFeesInput.addEventListener('input', function(event) {
@@ -64,6 +73,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
          const numericValue = inputValue.replace(/\D/g, '');
          event.target.value = numericValue;
       });
+
    });
 
 

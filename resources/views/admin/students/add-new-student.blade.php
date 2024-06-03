@@ -15,7 +15,7 @@
       <p>{{ Session::get('unsuccess') }}</p>
    </div>
    @endif 
-   <h2>Add New Student</h2>
+   <h2>Add New Student Record</h2>
    <div class="login-form">
       <form action="{{ route('admin.submit.student') }}" Method="POST" enctype="multipart/form-data">
          @csrf 
@@ -77,7 +77,7 @@
          </div>
          <div class="form-group">
             <div class="form-design password">
-               <label for="password">Passwordr</label>
+               <label for="password">Password</label>
                <input type="password" id="password" name="password" placeholder="Enter Password">
             </div>
             <div class="form-design student-phone-no">
@@ -188,6 +188,10 @@
                   <option value="Jammu and Kashmir">Jammu and Kashmir</option>
                </select>
             </div>
+            <div class="form-design pin-code">
+               <label for="pin_code">Pin Code</label>
+               <input type="text" id="pin_code" name="pin_code" placeholder="Enter Pin Code">
+            </div>
             <div class="form-design qualification">
                <label for="qualification">Qualification</label>
                <label class="checkbox-option">
@@ -195,7 +199,7 @@
                <span>12th</span>
                </label>
                <label class="checkbox-option">
-               <input type="checkbox" name="qualification[]" value="12th Pursuing">
+               <input type="checkbox" name="qualification[]" value="12th_Pursuing">
                <span>12th Pursuing</span>
                </label>
                <label class="checkbox-option">
@@ -203,7 +207,7 @@
                <span>Graduation</span>
                </label>
                <label class="checkbox-option">
-               <input type="checkbox" name="qualification[]" value="Graduation Pursuing">
+               <input type="checkbox" name="qualification[]" value="Graduation_Pursuing">
                <span>Graduation Pursuing</span>
                </label>
                <label class="checkbox-option">
@@ -229,6 +233,7 @@
                   <option value="2 Month">2 Month</option>
                   <option value="6 Month">6 Month</option>
                   <option value="1 Year">1 Year</option>
+                  <option value="2 Year">2 Year</option>
                </select>
             </div>
          </div>
@@ -237,13 +242,21 @@
                <label for="course_joining_date">Course Joining Date</label>
                <input type="date" id="course_joining_date" name="course_joining_date">
             </div>
+            <div class="form-design batch-timing">
+               <label for="batch_timing">Batch Timing</label>
+               <select id="batch_timing" name="batch_timing" class="form-control">
+                  <option value ="" disabled selected>Select Batch Timing</option>
+                  <option value="10:00 to 2:00">10:00 to 2:00</option>
+                  <option value="2:00 to 6:00">2:00 to 6:00</option>
+               </select>
+            </div>
             <div class="form-design end-date">
                <label for="course_complession_date">Course Complession Date</label>
                <input type="date" id="course_complession_date" name="course_complession_date">
             </div>
             <div class="form-design status">
                <label for="total-fees">Total Fees</label>
-               <input type="number" id="total-fees" name="total-fees" placeholder="Enter amount">
+               <input type="number" id="total-fees" name="total_fees" placeholder="Enter amount">
             </div>
             <div class="form-design fees">
                <label for="user_status">Status</label>
@@ -255,27 +268,13 @@
                </select>
             </div>
          </div>
-         <div class="main-payment">
-            <div class="payment-head">
-               <h3>Monthly Fees</h3>
-            </div>
-            <div class="form-group">
-               <div class="amount">
-                  <label for="fees-amount">Fees Amount</label>
-                  <input type="number" id="fees-amount" name="fees-amount" placeholder="Enter amount">
-               </div>
-               <div class="payment-date">
-                  <label for="payment-date">Fees payment date</label>
-                  <input type="date" id="payment-date" name="payment-date">
-               </div>
-            </div>
-         </div>
          <div class="form-button">
             <div class="back-button">
                <a href="{{ url('admin/all-students-list') }}">Back</a>
             </div>
             <div class="save-button">
-               <input type="submit" name="submit" value="Save">
+               <input type="submit" class="btn btn-success" name="submit" value="Save">
+               <input type="reset" class="reset" name="reset" value="Cancel">
             </div>
          </div>
       </form>

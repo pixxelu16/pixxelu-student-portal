@@ -39,29 +39,34 @@
    </div>
    <div class="menu-items">
       <ul class="nav-links">
-         <li><a href="{{ url('admin/dashboard') }}">
-            <img src="{{ url('public/admin/images/dashboard.svg') }}" alt="dashboard" />
-            <span class="link-name">Dashboard</span>
+         <li class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
+            <a href="{{ url('admin/dashboard') }}">
+               <img src="{{ url('public/admin/images/dashboard.svg') }}" alt="dashboard" />
+               <span class="link-name">Dashboard</span>
             </a>
          </li>
-         <li><a href="{{ url('admin/all-students-list') }}">
-            <img src="{{ url('public/admin/images/student.svg') }}" alt="student" />
-            <span class="link-name">All Students</span>
+         <li class="{{ request()->is('admin/all-students-list') ? 'active' : '' }}">
+            <a href="{{ url('admin/all-students-list') }}">
+               <img src="{{ url('public/admin/images/student.svg') }}" alt="student" />
+               <span class="link-name">All Students</span>
             </a>
          </li>
-         <li><a href="#">
-            <img src="{{ url('public/admin/images/attendance.svg') }}" alt="attendance" />
-            <span class="link-name">Attendance</span>
+         <li class="{{ request()->is('admin/attendance') ? 'active' : '' }}">
+            <a href="aatendance.html">
+               <img src="{{ url('public/admin/images/attendance.svg') }}" alt="attendance" />
+               <span class="link-name">Attendance</span>
             </a>
          </li>
-         <li><a href="staff.html">
-            <img src="{{ url('public/admin/images/staff.svg') }}" alt="staff" />
-            <span class="link-name">Staff</span>
+         <li class="{{ request()->is('admin/staff') ? 'active' : '' }}">
+            <a href="staff.html">
+               <img src="{{ url('public/admin/images/staff.svg') }}" alt="staff" />
+               <span class="link-name">Staff</span>
             </a>
          </li>
-         <li><a href="#">
-            <img src="{{ url('public/admin/images/leads.svg') }}" alt="leads" />
-            <span class="link-name">Leads</span>
+         <li class="{{ request()->is('admin/leads') ? 'active' : '' }}">
+            <a href="#">
+               <img src="{{ url('public/admin/images/leads.svg') }}" alt="leads" />
+               <span class="link-name">Leads</span>
             </a>
          </li>
       </ul>

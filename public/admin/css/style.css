@@ -1170,3 +1170,41 @@ form.login-container p img {
    cursor: pointer;
 }
 /* end success message */
+
+/* button start css */
+.save-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.save-button input[type="submit"],
+.save-button input[type="reset"] {
+    padding: 10px 0; 
+    width: 90px; 
+    border: none;
+    cursor: pointer;
+}
+
+.save-button input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+.save-button input[type="reset"] {
+    background-color: #dc3545; 
+    color: white;
+    margin-left: 10px; /
+}
+
+.save-button input[type="submit"]:hover,
+.save-button input[type="reset"]:hover {
+    opacity: 0.8; 
+}
+
+.email-disabled {
+    pointer-events: none;
+    background-color: #e9ecef; 
+    color: #6c757d; 
+}
+
+/* button end css */

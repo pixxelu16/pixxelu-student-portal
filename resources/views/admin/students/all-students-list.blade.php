@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content') 
+@section('content')
 <div class="space-remove"></div>
 <div class="title-subheading">
 @if (Session::has('success')) 
@@ -12,7 +12,7 @@
       <p>{{ Session::get('unsuccess') }}</p>
    </div>
    @endif 
-   <h2>All Students</h2>
+   <h2>All Students Listing</h2>
 </div>
 <div class="main-table">
    <div class="data-table-listing">
@@ -51,6 +51,8 @@
                <th>Aadhar No</th>
                <th>Course</th>
                <th>Joining Date</th>
+               <th>Batch Timing</th>
+               <th>Complession Date</th>
                <th>Total Fees</th>
                <th>Course Duration</th>
                <th>Last paid Fees</th>
@@ -62,27 +64,7 @@
             @php $count = 1; @endphp
             @foreach($get_students_detail as $student)
             <tr>
-               <!--<div id="myModal" class="modal">
-                  <div class="modal-content">
-                     <span class="close">&times;</span>
-                     <div class="student-card">
-                        <img src="{{ url('public/admin/images/d1.png') }}" alt="Student Image">
-                        <div class="student-info">
-                           <div><span>Student ID:</span> 001</div>
-                           <div><span>Name:</span> John Doe</div>
-                           <div><span>Phone No:</span> +1234567890</div>
-                           <div><span>Email:</span> john.doe@example.com</div>
-                           <div><span>Aadhar No:</span> 1234-5678-9012</div>
-                           <div><span>Course:</span> Computer Science</div>
-                           <div><span>Joining Date:</span> 2021-08-15</div>
-                           <div><span>Total Fees:</span> $2000</div>
-                           <div><span>Course Duration:</span> 4 Years</div>
-                           <div><span>Last paid Fees:</span> $500</div>
-                           <div><span>Status:</span> Active</div>
-                        </div>
-                     </div>
-                  </div>
-                  </div> -->
+              
                <td data-th="">
                   <input type="checkbox">
                </td>
@@ -112,6 +94,12 @@
                </td>
                <td data-th="Course Joining Date">
                   {{ $student->course_joining_date }}
+               </td>
+               <td data-th="batch timing">
+                  {{ $student->batch_timing }}
+               </td>
+               <td data-th="Course end Date">
+                  {{ $student->course_complession_date }}
                </td>
                <td data-th="total fess">
                   {{ $student->total_fees }}
@@ -156,15 +144,30 @@
                   </td> -->
             </tr>
             @endforeach
+
          </tbody>
       </table>
-      <div id="myModal" class="modal">
-         <!-- Modal content -->
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>This is a modal popup!</p>
-         </div>
-      </div>
-   </div>
-</div>
+               <div id="myModal" class="modal">
+                  <div class="modal-content">
+                     <span class="close">&times;</span>
+                     <div class="student-card">
+                        <img src="{{ url('public/admin/images/d1.png') }}" alt="Student Image">
+                        <div class="student-info">
+                           <div><span>Student ID:</span> 001</div>
+                           <div><span>Name:</span> John Doe</div>
+                           <div><span>Phone No:</span> +1234567890</div>
+                           <div><span>Email:</span> john.doe@example.com</div>
+                           <div><span>Aadhar No:</span> 1234-5678-9012</div>
+                           <div><span>Course:</span> Computer Science</div>
+                           <div><span>Joining Date:</span> 2021-08-15</div>
+                           <div><span>Total Fees:</span> $2000</div>
+                           <div><span>Course Duration:</span> 4 Years</div>
+                           <div><span>Last paid Fees:</span> $500</div>
+                           <div><span>Status:</span> Active</div>
+                        </div>
+                     </div>
+                  </div>
+                  </div> 
+               </div>
+            </div>
 @endsection
