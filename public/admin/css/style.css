@@ -174,8 +174,14 @@ li.active {
     text-decoration: none;
     position: relative;
     gap: 10px;
+    color: #fff;
 }
-
+.login span.invalid-feedback strong {
+    font-size: 12px;
+    color: rgb(235, 2, 2);
+    font-weight: 400;
+    letter-spacing: 0.6px;
+}
 ul.nav-links {
     padding: 0 20px;
 }
@@ -193,10 +199,12 @@ body.dark li a:hover:before {
     justify-content: center;
     color: var(--panel-color);
 }
-
+ul.logout-mode li a img {
+    width: 20px;
+}
 .menu-items li a .link-name {
     color: var(--panel-color);
-    transition: var(--tran-05);
+    /* transition: var(--tran-05); */
     font-size: 16px;
     font-weight: 600;
     line-height: 19px;
@@ -641,13 +649,8 @@ td:last-child {
 }
 
 .title-subheading {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 33px;
-    text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
 .dropdown-column {
     display: flex;
     align-items: center;
@@ -999,7 +1002,7 @@ form.login-container p img {
 }
 .title-subheading h2 {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
 }
 /* Popup Design End  */
 
@@ -1110,6 +1113,7 @@ form.login-container p img {
     padding: 0 10px;
     outline: 0;
     border-radius: 5px;
+    font-size: 12px;
 }
 .form-group select {
     width: 100%;
@@ -1122,7 +1126,7 @@ form.login-container p img {
 }
 
 .form-design {
-    width: 30%;
+    width: 33%;
 }
 .small-12.medium-2.large-2.columns {
     margin-top: 20px;
@@ -1208,3 +1212,84 @@ form.login-container p img {
 }
 
 /* button end css */
+
+
+
+.login-form {
+    width: 60%;
+    box-shadow: 0 0 10px 0 #e6e6e6;
+    padding: 20px 50px;
+    margin: 25px auto;
+    border-radius: 10px;
+    border: 1px solid #f4f4f4;
+}
+.radio-btn-design .form-group {
+    display: block;
+}
+.radio-btn-design .form-group .gender-options {
+    display: flex;
+    gap: 25px;
+}
+.gender input {
+    width: 15px;
+}
+.gender.male {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.radio-btn-design {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.checkbox-option span {
+    font-size: 13px !important;
+}
+.gender label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.qualification-ftp {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkbox-option {
+    display: flex;
+    gap: 7px;
+}
+.back-button input {
+    border: 2px solid #018294;
+    padding: 10px 29px;
+    background: #018294;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: #fff;
+}
+.form-design.qualification label {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.radio-btn-design .form-group {
+    width: 33%;
+}
+.form-design.qualification {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.gender-options {
+    display: flex;
+    gap: 14px;
+}
+
+.gender label {
+    font-size: 13px !important;
+}
+.gender span {
+    font-size: 13px !important;
+}
