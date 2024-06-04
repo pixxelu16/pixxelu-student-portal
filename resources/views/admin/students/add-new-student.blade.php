@@ -82,6 +82,34 @@
             <div class="form-group">
                <label>Gender</label>
                <div class="form-design gender-options">
+
+               <div class="gender male">
+                  <input type="radio" name="gender" value="Male"  />
+                  <span>Male</span>
+               </div>
+               <div class="gender male">  
+                  <input type="radio" name="gender" value="Female">
+                  <span>Female</span>
+               </div>
+            </div>
+         </div>
+         <div class="form-group">
+            <label>Marital Status</label>
+            <div class="form-design marital-status gender-options">
+               <div class="gender male">  
+                  <input type="radio" name="marital_status" value="Married">
+                  <span>Married</span>
+               </div>
+
+               <div class="gender male">  
+                  <input type="radio" name="marital_status" value="Unmarried">
+                  <span>Unmarried</span>
+               </div>
+
+               <div class="gender male">  
+                  <input type="radio" name="marital_status" value="Other">
+                  <span>Other</span>
+
                   <div class="gender male">
                      <input type="radio" name="gender" value="Male" checked />
                      <span>Male</span>
@@ -107,6 +135,7 @@
                      <input type="radio" name="marital_status" value="Other">
                      <span>Other</span>
                   </div>
+
                </div>
             </div>
             <div class="form-design category">
@@ -114,8 +143,13 @@
                <div class="form-design marital-status gender-options">
                   <div class="gender male"> 
                      <label class="radio-option">
+
+                        <input type="radio" name="category" value="General">
+                        <span>General</span>
+
                      <input type="radio" name="category" value="General" checked>
                      <span>General</span>
+
                      </label>
                   </div>
                   <div class="gender male">  
@@ -165,29 +199,7 @@
             </div>
          </div>
          <div class="form-group display-column">
-            <div class="form-design address">
-               <label for="address">Address</label>
-               <input type="text" id="address" name="address" placeholder="Enter Address">
-            </div>
-            <div class="form-design district">
-               <label for="district">District</label>
-               <select name="district" class="form-control" id="district">
-                  <option value="" disabled selected>Select District</option>
-                  <option value="Bilaspur">Bilaspur</option>
-                  <option value="Chamba">Chamba</option>
-                  <option value="Hamirpur">Hamirpur</option>
-                  <option value="Kangra">Kangra</option>
-                  <option value="Kinnaur">Kinnaur</option>
-                  <option value="Kullu">Kullu</option>
-                  <option value="Lahaul and Spiti">Lahaul and Spiti</option>
-                  <option value="Mandi">Mandi</option>
-                  <option value="Shimla">Shimla</option>
-                  <option value="Sirmaur">Sirmaur</option>
-                  <option value="Solan">Solan</option>
-                  <option value="Una">Una</option>
-               </select>
-            </div>
-            <div class="form-design state">
+         <div class="form-design state">
                <label for="state">State</label>
                <select name="state" class="form-control" id="state">
                   <option value="" disabled selected>Select State</option>
@@ -229,16 +241,42 @@
                   <option value="Jammu and Kashmir">Jammu and Kashmir</option>
                </select>
             </div>
+            
+            <div class="form-design district">
+               <label for="district">District</label>
+               <select name="district" class="form-control" id="district">
+                  <option value="" disabled selected>Select District</option>
+                  <option value="Bilaspur">Bilaspur</option>
+                  <option value="Chamba">Chamba</option>
+                  <option value="Hamirpur">Hamirpur</option>
+                  <option value="Kangra">Kangra</option>
+                  <option value="Kinnaur">Kinnaur</option>
+                  <option value="Kullu">Kullu</option>
+                  <option value="Lahaul and Spiti">Lahaul and Spiti</option>
+                  <option value="Mandi">Mandi</option>
+                  <option value="Shimla">Shimla</option>
+                  <option value="Sirmaur">Sirmaur</option>
+                  <option value="Solan">Solan</option>
+                  <option value="Una">Una</option>
+               </select>
+            </div>
+
+            <div class="form-design address">
+               <label for="address">Address</label>
+               <input type="text" id="address" name="address" placeholder="Enter Address">
+            </div>
          </div>
          <div class="form-group display-column">
             <div class="form-design pin-code">
                <label for="pin_code">Pin Code</label>
                <input type="text" id="pin_code" name="pin_code" placeholder="Enter Pin Code">
             </div>
+
             <div class="form-design end-date">
                <label for="course_complession_date">Course Complession Date</label>
                <input type="date" id="course_complession_date" class="course_complession_date_disabled" name="course_complession_date">
             </div>
+
             <div class="form-design course">
                <label for="course_type">Course Type</label>
                <select class="form-control" name="course_type" id="Course Type">
@@ -248,8 +286,10 @@
                   <option value="Graphic">Graphic</option>
                </select>
             </div>
+
          </div>
          <div class="form-group display-column">
+
             <div class="form-design duration">
                <label for="course_duration">Course Duration</label>
                <select class="form-control" name="course_duration" id="Course Duration">
@@ -260,10 +300,21 @@
                   <option value="2 Year">2 Year</option>
                </select>
             </div>
+
+         </div>
+
+         <div class="form-group display-column">
+
             <div class="form-design join-date">
                <label for="course_joining_date">Course Joining Date</label>
                <input type="date" id="course_joining_date" name="course_joining_date">
             </div>
+
+            <div class="form-design end-date">
+               <label for="course_complession_date">Course Complession Date</label>
+               <input type="date" id="course_complession_date" name="course_complession_date">
+            </div>
+
             <div class="form-design batch-timing">
                <label for="batch_timing">Batch Timing</label>
                <select id="batch_timing" name="batch_timing" class="form-control">
