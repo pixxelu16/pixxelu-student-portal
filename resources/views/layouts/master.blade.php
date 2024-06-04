@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="{{ url('public/admin/css/style.css') }}">
       <link rel="stylesheet" href="{{ url('public/admin/css/dark-mode.css') }}">
       <link rel="stylesheet" href="{{ url('public/admin/css/mobile.css') }}">
+      <link rel="stylesheet" href="{{ url('public/admin/css/bootstrap.min.css') }}">
       <!----===== Iconscout CSS ===== -->
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -35,6 +36,8 @@
       </script> 
       <script src="{{ url('public/admin/js/script.js') }}"></script>
       <script src="{{ url('public/admin/js/custom-script.js') }}"></script>
+      <script src="{{ url('public/admin/js/bootstrap.min.js') }}"></script>
+      <script src="{{ url('public/admin/js/bootstrap.bundle.min.js') }}"></script>
       <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
       <!-- DataTables JS CDN -->
       <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
@@ -58,5 +61,7 @@
              });
          });
       </script>
+
+
    </body>
 </html>

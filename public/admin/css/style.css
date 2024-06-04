@@ -548,7 +548,7 @@ table.rwd-table tr:hover {
 .data-table-listing {
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
 
 .rwd-table {
@@ -1123,8 +1123,8 @@ form.login-container p img {
     padding: 0 10px;
     border-radius: 5px;
     outline: 0;
+    font-size: 12px;
 }
-
 .form-design {
     width: 33%;
 }
@@ -1228,7 +1228,7 @@ form.login-container p img {
 }
 .radio-btn-design .form-group .gender-options {
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 .gender input {
     width: 15px;
@@ -1292,4 +1292,74 @@ form.login-container p img {
 }
 .gender span {
     font-size: 13px !important;
+}
+body .pay-fee-design {
+    font-size: 10px;
+    background: #c8e6c9;
+    border-radius: 7px;
+    border: none;
+    color: #000;
+    font-weight: 700;
+    padding: 4px 8px;
+}
+
+body .pay-fee-design:hover {
+    background: #018294;
+}
+body .modal-backdrop {
+    position: relative;
+}
+
+ul.dropdown-menu.pay-fees-submit.show {
+    padding: 15px;
+    width: 187px;
+    overflow: hidden;
+}
+span.add-fees {
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+li.pay-list-submit input {
+    width: 73%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    height: 28px;
+    margin-top: 9px;
+    font-size: 10px;
+    outline: 0;
+    padding: 0 5px;
+    margin: 0;
+}
+li.pay-list-submit {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+li.pay-list-submit button {
+    background: #018294;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    height: 28px;
+    padding: 0 7px;
+    border-radius: 4px;
+}
+.scrolling-data-table td img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+body .action-fee-design {
+    background: transparent;
+    border: none;
+}
+
+body .action-fee-design img {
+    width: 7px !important;
+}
+
+body .action-fee-design:hover {
+    background: transparent;
 }
