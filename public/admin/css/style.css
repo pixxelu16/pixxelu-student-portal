@@ -1293,6 +1293,7 @@ form.login-container p img {
 .gender span {
     font-size: 13px !important;
 }
+
 body .pay-fee-design {
     font-size: 10px;
     background: #c8e6c9;
@@ -1302,14 +1303,12 @@ body .pay-fee-design {
     font-weight: 700;
     padding: 4px 8px;
 }
-
 body .pay-fee-design:hover {
     background: #018294;
 }
 body .modal-backdrop {
     position: relative;
 }
-
 ul.dropdown-menu.pay-fees-submit.show {
     padding: 15px;
     width: 187px;
@@ -1363,3 +1362,4 @@ body .action-fee-design img {
 body .action-fee-design:hover {
     background: transparent;
 }
+

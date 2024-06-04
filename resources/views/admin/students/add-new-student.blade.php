@@ -1,5 +1,14 @@
 @extends('layouts.master')
 @section('content')
+<style>
+   .course_complession_date_disabled {
+   background-color: #e9ecef; 
+   color: #6c757d;          
+   pointer-events: none;     
+   cursor: not-allowed;      
+   opacity: 0.6;             
+   }
+</style>
 <div class="space-remove"></div>
 <div class="title-subheading">
    <h2>Add New Student Record</h2>
@@ -15,7 +24,6 @@
       <p>{{ Session::get('unsuccess') }}</p>
    </div>
    @endif 
-   
    <div class="login-form">
       <form action="{{ route('admin.submit.student') }}" Method="POST" enctype="multipart/form-data">
          @csrf 
@@ -28,7 +36,6 @@
                <input class="file-upload" type="file" name="image" accept="image/*" />
             </div>
          </div>
-
          <div class="form-group display-column">
             <div class="form-design first-name">
                <label for="first-name">First Name</label>
@@ -43,8 +50,6 @@
                <input type="email" id="email" name="email" placeholder="Enter email address">
             </div>
          </div>
-
-
          <div class="form-group display-column">
             <div class="form-design dob">
                <label for="dob">Date of Birth</label>
@@ -59,8 +64,6 @@
                <input type="text" id="father_phone_no" name="father_phone_no" placeholder="Enter Father Phone Number">
             </div>
          </div>
-
-
          <div class="form-group display-column">
             <div class="form-design aadhaar-no">
                <label for="aadhar_no">Aadhar Number</label>
@@ -75,11 +78,11 @@
                <input type="text" id="student_phone_no" name="student_phone_no" placeholder="Enter Student Phone Number">
             </div>
          </div>
-
-      <div class="form-group display-column radio-btn-design">
-         <div class="form-group">
+         <div class="form-group display-column radio-btn-design">
+            <div class="form-group">
                <label>Gender</label>
                <div class="form-design gender-options">
+
                <div class="gender male">
                   <input type="radio" name="gender" value="Male"  />
                   <span>Male</span>
@@ -106,69 +109,95 @@
                <div class="gender male">  
                   <input type="radio" name="marital_status" value="Other">
                   <span>Other</span>
+
+                  <div class="gender male">
+                     <input type="radio" name="gender" value="Male" checked />
+                     <span>Male</span>
+                  </div>
+                  <div class="gender male">  
+                     <input type="radio" name="gender" value="Female">
+                     <span>Female</span>
+                  </div>
                </div>
             </div>
-         </div>
+            <div class="form-group">
+               <label>Marital Status</label>
+               <div class="form-design marital-status gender-options">
+                  <div class="gender male">  
+                     <input type="radio" name="marital_status" value="Married" checked>
+                     <span>Married</span>
+                  </div>
+                  <div class="gender male">  
+                     <input type="radio" name="marital_status" value="Unmarried">
+                     <span>Unmarried</span>
+                  </div>
+                  <div class="gender male">  
+                     <input type="radio" name="marital_status" value="Other">
+                     <span>Other</span>
+                  </div>
+
+               </div>
+            </div>
             <div class="form-design category">
                <label for="category">Category</label>
                <div class="form-design marital-status gender-options">
                   <div class="gender male"> 
                      <label class="radio-option">
+
                         <input type="radio" name="category" value="General">
                         <span>General</span>
+
+                     <input type="radio" name="category" value="General" checked>
+                     <span>General</span>
+
                      </label>
                   </div>
                   <div class="gender male">  
                      <label class="radio-option">
-                        <input type="radio" name="category" value="ST">
-                        <span>ST</span>
+                     <input type="radio" name="category" value="ST">
+                     <span>ST</span>
                      </label>
                   </div>
                   <div class="gender male">  
                      <label class="radio-option">
-                        <input type="radio" name="category" value="SC">
-                        <span>SC</span>
+                     <input type="radio" name="category" value="SC">
+                     <span>SC</span>
                      </label>
                   </div>
                   <div class="gender male">  
                      <label class="radio-option">
-                        <input type="radio" name="category" value="OBC">
-                        <span>OBC</span>
+                     <input type="radio" name="category" value="OBC">
+                     <span>OBC</span>
                      </label>
                   </div>
                </div>
             </div>
          </div>
          <div class="form-design qualification">
-               <label for="qualification">Qualification</label>
-               <div class="qualification-ftp">
-                  <div class="checkbox-option">
-                     <input type="checkbox" name="qualification[]" value="12th">
-                     <span>12th</span>
-                  </div>
-
-                  <div class="checkbox-option">
-                     <input type="checkbox" name="qualification[]" value="12th_Pursuing">
-                     <span>12th Pursuing</span>
-                  </div>
-
-                  <div class="checkbox-option">
-                     <input type="checkbox" name="qualification[]" value="Graduation">
-                     <span>Graduation</span>
-                  </div>
-
-                  <div class="checkbox-option">
-                     <input type="checkbox" name="qualification[]" value="Graduation_Pursuing">
-                     <span>Graduation Pursuing</span>
-                  </div>
-
-                  <div class="checkbox-option">
-                     <input type="checkbox" name="qualification[]" value="Other">
-                     <span>Other</span>
-                  </div>
+            <label for="qualification">Qualification</label>
+            <div class="qualification-ftp">
+               <div class="checkbox-option">
+                  <input type="checkbox" name="qualification[]" value="12th">
+                  <span>12th</span>
+               </div>
+               <div class="checkbox-option">
+                  <input type="checkbox" name="qualification[]" value="12th_Pursuing">
+                  <span>12th Pursuing</span>
+               </div>
+               <div class="checkbox-option">
+                  <input type="checkbox" name="qualification[]" value="Graduation">
+                  <span>Graduation</span>
+               </div>
+               <div class="checkbox-option">
+                  <input type="checkbox" name="qualification[]" value="Graduation_Pursuing">
+                  <span>Graduation Pursuing</span>
+               </div>
+               <div class="checkbox-option">
+                  <input type="checkbox" name="qualification[]" value="Other">
+                  <span>Other</span>
                </div>
             </div>
-
+         </div>
          <div class="form-group display-column">
          <div class="form-design state">
                <label for="state">State</label>
@@ -237,13 +266,17 @@
                <input type="text" id="address" name="address" placeholder="Enter Address">
             </div>
          </div>
-          
          <div class="form-group display-column">
             <div class="form-design pin-code">
                <label for="pin_code">Pin Code</label>
                <input type="text" id="pin_code" name="pin_code" placeholder="Enter Pin Code">
             </div>
-            
+
+            <div class="form-design end-date">
+               <label for="course_complession_date">Course Complession Date</label>
+               <input type="date" id="course_complession_date" class="course_complession_date_disabled" name="course_complession_date">
+            </div>
+
             <div class="form-design course">
                <label for="course_type">Course Type</label>
                <select class="form-control" name="course_type" id="Course Type">
@@ -253,6 +286,10 @@
                   <option value="Graphic">Graphic</option>
                </select>
             </div>
+
+         </div>
+         <div class="form-group display-column">
+
             <div class="form-design duration">
                <label for="course_duration">Course Duration</label>
                <select class="form-control" name="course_duration" id="Course Duration">
@@ -287,12 +324,10 @@
                </select>
             </div>
          </div>
-
          <div class="form-group display-column">
-            
             <div class="form-design status">
                <label for="total-fees">Total Fees</label>
-               <input type="number" id="total-fees" name="total_fees" placeholder="Enter amount">
+               <input type="text" id="total_fees" name="total_fees" placeholder="Enter amount">
             </div>
             <div class="form-design fees">
                <label for="user_status">Status</label>
@@ -303,9 +338,7 @@
                   <option value="Suspend">Suspend</option>
                </select>
             </div>
-            
          </div>
-
          <div class="form-button">
             <div class="back-button">
                <input type="submit" class="btn btn-success" name="submit" value="Submit">
