@@ -251,10 +251,6 @@
                   <option value="2:00 to 5:00" @if($student->batch_timing == '2:00 to 5:00') selected @endif>2:00 to 5:00</option>
                </select>
             </div>
-            <div class="form-design end-date">
-               <label for="course_complession_date">Course Complession Date</label>
-               <input type="date" id="course_complession_date" name="course_complession_date" value="{{ $student->course_complession_date }}">
-            </div>
             <div class="form-design status">
                <label for="total-fees">Total Fees</label>
                <input type="number" id="total-fees" name="total_fees" value="{{ $student->total_fees }}" placeholder="Enter amount">
